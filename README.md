@@ -1,2 +1,2 @@
-# posthtml-distro
-PostHTML plugin for distro.mic.com
+# reshape-rss
+[Reshape](https://github.com/reshape/reshape) plugin for RSS feeds
