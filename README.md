@@ -27,18 +27,15 @@ reshape({
   ]
 })
   .process(`
-    <article
-      rss-item-channel="Blog Posts"
-      rss-item-title="The Genius Loki of Utopia"
-      rss-item-description="A sample blog post"
-      rss-item-pubDate="12 July 2013, 11:13"
-      rss-item-link="http://mysite.com/blog/the-genius-loki-of-utopia"
-      rss-item-author="Joe West"
-      rss-item-guid="http://mysite.com/blog/the-genius-loki-of-utopia"
-      rss-item-category="random"
-      rss-item-comments="http://mysite.com/blog/the-genius-loki-of-utopia/#/comments">
-      ...
-    </article>
+	<article rss-channel="Blog Posts" rss-category="random">
+      <h2 rss-title>The Genius Loki of Utopia</h2>
+      <time rss-pubDate>12 July 2013, 11:13</time>
+      <p rss-description>A sample blog post</p>
+      <footer rss-author>Joe West</footer>
+      <a href="http://mysite.com/blog/the-genius-loki-of-utopia/#/comments"
+         rss-comments>31 Comments</a>
+      <a href="http://mysite.com/blog/the-genius-loki-of-utopia" rss-link rss-guid>Read More</a>
+	</article>
   `)
   .then((result) => result.output())
 ```
@@ -95,15 +92,15 @@ Options passed to the plugin function. Any custom channel property will be mappe
 | channel.link*        | A link to this channel's HTML site  |             |
 | channel.description* | A description for this channel      |             |
 
-### Attributes
+### Item Attributes
 
-Attributes for a single item. Any custom item attribute will be mapped to a respective XML node (child of `<item>`) e.g. `rss-item-foo="bar"` becomes `<foo>bar</foo>`. Refer to [this explanation](http://www.landofcode.com/rss-reference/item-tag.php) for a list of each item property.
+Attributes for a single item. Any custom item attribute will be mapped to a respective XML node (child of `<item>`) e.g. `rss-foo="bar"` becomes `<foo>bar</foo>`. Refer to [this explanation](http://www.landofcode.com/rss-reference/item-tag.php) for a list of each item property. If an attribute has no value, it will be inferred from the `innerText` of the node. `rss-link`, `rss-comments` and `rss-guid` will grab the value from the `href` attribute if present.
 
 > `*` indicates a required attribute.
 
-| Name                  | Description                           | Default |
-| --------------------- | ------------------------------------- | ------- |
-| rss-item-channel*     | Which channel this item belongs to.   |         |
-| rss-item-title*       | The title for this item.              |         |
-| rss-item-description* | The description for this item.        |         |
-| rss-item-link*        | A URI to the HTML site for this item. |         |
+| Name             | Description                           | Default |
+| ---------------- | ------------------------------------- | ------- |
+| rss-channel*     | Which channel this item belongs to.   |         |
+| rss-title*       | The title for this item.              |         |
+| rss-description* | The description for this item.        |         |
+| rss-link*        | A URI to the HTML site for this item. |         |
