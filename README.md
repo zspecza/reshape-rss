@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/declandewet/reshape-rss.svg?branch=master)](https://travis-ci.org/declandewet/reshape-rss)
+[![codecov](https://codecov.io/gh/declandewet/reshape-rss/branch/master/graph/badge.svg)](https://codecov.io/gh/declandewet/reshape-rss)
+[![dependencies Status](https://david-dm.org/declandewet/reshape-rss/status.svg)](https://david-dm.org/declandewet/reshape-rss)
+[![devDependencies Status](https://david-dm.org/declandewet/reshape-rss/dev-status.svg)](https://david-dm.org/declandewet/reshape-rss?type=dev)
+
 # reshape-rss
 
 [Reshape](https://github.com/reshape/reshape) plugin for generating RSS feeds.
@@ -151,7 +156,7 @@ rss.mergeFeeds({
     title: 'Fizz',
     description: 'Buzz',
     link: 'http://fizzbuzz.com'
-  }]  
+  }]
 } */
 ```
 
@@ -203,6 +208,3 @@ Most `rss-*` attributes will attempt to infer their value from the `.innerText` 
   </article>
 </main>
 ```
-
-
-
