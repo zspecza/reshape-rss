@@ -10,7 +10,7 @@
     "url": "https://github.com/declandewet/reshape-rss/issues"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
+    "ava": "^2.2.0",
     "codecov": "^1.0.1",
     "nyc": "^8.1.0",
     "reshape": "^0.3.1",
